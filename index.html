@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Weiben - Wheel of fortune</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <link rel="stylesheet" type="text/css" href="explosion.css" />
+</head>
+
+<body>
+  <div id="app">
+    <img class="marker" src="marker.png" />
+
+    <img class="wheel" src="wheel.png" />
+
+    <button class="button">
+      <span class="spin-whell">
+        Çarkı Çevir
+      </span>
+    </button>
+    <div class="gradient-border" onchange="myFunction()" id="mySelect">Ödülünüz</div>
+    <p id="demo"></p>
+    <canvas class="confetti" id="canvas"></canvas>
+  </div>
+
+
+  <script src="script.js"></script>
+  <script src="explosion.js"></script>
+  <script>
+
+    function myFunction() {
+      var x = document.getElementById("mySelect").value;
+      document.getElementById("demo").innerHTML += "You selected: " + x;
+    }
+  </script>
+</body>
+
+</html>
