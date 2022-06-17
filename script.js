@@ -27,7 +27,7 @@
 
   startButton.addEventListener("click", () => {
     // Reset display
-    display.innerHTML = "Ödülünüz Yükleniyor...";
+
     // Disable button during spin
     startButton.style.pointerEvents = "none";
     // Calculate a new rotation between 5000 and 10 000
@@ -45,6 +45,7 @@
     wheel.classList.remove("blur");
     // Enable button when spin is over
     startButton.style.pointerEvents = "auto";
+    startButton.remove();
     // Need to set transition to none as we want to rotate instantly
     wheel.style.transition = "none";
     // Calculate degree on a 360 degree basis to get the "natural" real rotation

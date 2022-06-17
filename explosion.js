@@ -6,9 +6,9 @@ cx = ctx.canvas.width / 2;
 cy = ctx.canvas.height / 2;
 
 let confetti = [];
-const confettiCount = 1000; // konfeti tanecikleri
-const gravity = 0.5; // düşme hızı
-const terminalVelocity = 5;
+const confettiCount = 2000; // konfeti tanecikleri
+const gravity = 0.7; // düşme hızı
+const terminalVelocity = 50;
 const drag = 0.075;
 const colors = [
   { front: "red", back: "darkred" },
@@ -31,7 +31,7 @@ resizeCanvas = () => {
 
 randomRange = (min, max) => Math.random() * (max - min) + min;
 
-initConfetti = () => {
+function initConfetti() {
   for (let i = 0; i < confettiCount; i++) {
     confetti.push({
       color: colors[Math.floor(randomRange(0, colors.length))],
@@ -57,10 +57,11 @@ initConfetti = () => {
       },
     });
   }
-};
+}
 
 //---------Render-----------
-render = () => {
+
+function render() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   confetti.forEach((confetto, index) => {
@@ -103,24 +104,19 @@ render = () => {
   });
 
   // Fire off another round of confetti
-  if (confetti.length <= 10) initConfetti();
-
   window.requestAnimationFrame(render);
-  function( callback ){
-    window.setTimeout(callback, 1000 / 60);
-  };
-};
+}
 
-document.querySelector(".button").addEventListener("click", initConfetti);
-document.querySelector(".button").addEventListener("click", render);
 //---------Execution--------
 
 //----------Resize----------
 window.addEventListener("resize", function () {
   resizeCanvas();
 });
-    
 
-
-var mobileCountdown = "<a href='https://www.betateashop.com/kategori/my-gourmet-beta-tea?utm_source=web&utm_medium=countdown&utm_campaign=16-20haz' class='ctnlink'> <div class='containerctdwn'> <div class='text-container'> <p class='campaign-name'>My Gourmet Kategorisinde Geçerli İkinci Ürün %70 İndirimli</p></div><span class='fd-ctn'> <div id='flipdownm' class='flipdown'></div></span> </div></a>";
-var desktopCountdown = "<div id='clockdiv'> <span> <p class='cttext'>My Gourmet Kategorisinde Geçerli İkinci Ürün %70 İndirimli</p></span><div class='times'> <div id='flipdown' class='flipdown'></div></div><a href='https://www.betateashop.com/kategori/my-gourmet-beta-tea?utm_source=web&utm_medium=countdown&utm_campaign=16-20haz'  class='ctaCountdown'>Hemen Alışverişe <br><strong> Başla</strong></a></div>";
+setTimeout(function () {
+  document.querySelector("#button").addEventListener("click", initConfetti());
+}, 5000);
+setTimeout(function () {
+  document.querySelector("#button").addEventListener("click", render());
+}, 5000);
