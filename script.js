@@ -22,7 +22,7 @@
 
   const handleWin = (actualDeg) => {
     const winningSymbolNr = Math.ceil(actualDeg / zoneSize);
-    display.innerHTML = symbolSegments[winningSymbolNr];
+    display.innerHTML = symbolSegments[winningSymbolNr] + " KAZANDIN";
   };
 
   startButton.addEventListener("click", () => {
