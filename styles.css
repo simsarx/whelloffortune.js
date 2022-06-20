@@ -14,8 +14,23 @@
   font-family: "Raleway";
   font-size: 2.5rem;
 }
+@media screen and (max-width: 600px) {
+  body {
+  }
+
+  #app {
+    width: 50px;
+    height: 100vh;
+    width: auto;
+  }
+
+  #wheel {
+    width: 399px !important;
+    height: auto;
+  }
+}
 .spin-whell {
-  color:white;
+  color: white;
   content: "";
   background: linear-gradient(
     60deg,
@@ -34,7 +49,7 @@
   animation: animatedgradient 3s ease alternate infinite;
   background-size: 300% 300%;
   border: 1px solid transparent;
-    border-radius: 14px;
+  border-radius: 14px;
 }
 .gradient-border {
   --borderWidth: 3px;
@@ -122,7 +137,6 @@
   z-index: 2;
 }
 
-
 .button {
   display: block;
   font-size: 3rem;
@@ -153,12 +167,9 @@
   }
 }
 
-
 @media screen and (max-width: 480px) {
-
-.whell{
-  width: 500px;
-  height: auto;
-
-}
+  .whell {
+    width: 500px;
+    height: auto;
+  }
 }
