@@ -113,10 +113,9 @@ function render() {
 window.addEventListener("resize", function () {
   resizeCanvas();
 });
-
-setTimeout(function () {
-  document.querySelector("#button").addEventListener("click", initConfetti());
-}, 5000);
-setTimeout(function () {
-  document.querySelector("#button").addEventListener("click", render());
-}, 5000);
+setTimeout(
+  document
+    .querySelector(".spin-whell")
+    .addEventListener("click", initConfetti()),
+  20000
+);
