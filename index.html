@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Hediye Çark</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
 
-<head>
-  <title>Hediye Çark</title>
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" type="text/css" href="styles.css" />
-  <link rel="stylesheet" type="text/css" href="explosion.css" />
-  <style>
+    <style>
+      #wheel {
+        width: 48em;
+      }
+      @media screen and (max-width: 480px) {
+        #wheel {
+          width: 500px;
+        }
+      }
+    </style>
+  </head>
 
-  </style>
-</head>
+  <body>
+    <main id="app">
+      <div class="mainApp">
+        <img class="marker" src="marker.png" />
+        <div class="images">
+          <img id="wheel" src="./e2_auto_x2.jpg" />
+        </div>
+        <button class="button" id="button">
+          <span class="spin-whell">Çevir </span>
+        </button>
+        <div class="gradient-border">Ödülünüz:</div>
+      </div>
+    </main>
 
-<body>
-  <div id="app">
-    <img class="marker" src="marker.png" />
+    <script src="/script.js"></script>
 
-    <img class="wheel" id="wheel" src="wheel.png" />
-
-    <button onclick="render()" class="button" id="button">
-      <span class="spin-whell">
-        Çarkı Çevir
-      </span>
-    </button>
-    <div class="gradient-border"></div>
-    <p id="demo"></p>
-    <canvas class="confetti" id="canvas"></canvas>
-  </div>
-
-
-  <script src="/script.js"></script>
-  <script src="/explosion.js"></script>
-  <script>
-
-
-  </script>
+    <script></script>
+  </body>
+</html>
